@@ -66,7 +66,7 @@ resource "aws_synthetics_canary" "canary" {
 #Description : Terraform module creates IAM Role for Cloudwatch Synthetic canaries on AWS for monitoriing Websites.
 
 resource "aws_iam_policy" "canary_policy" {
-  name        = "canary-policy"
+  name        = var.canary_iam_policy_name
   description = "Policy for canary"
   policy      = data.aws_iam_policy_document.canary_permissions.json
 }
@@ -143,7 +143,7 @@ data "aws_iam_policy_document" "canary_permissions" {
 }
 
 resource "aws_iam_role" "canary_role" {
-  name               = "CloudWatchSyntheticsRole"
+  name               = var.canary_iam_role_name
   assume_role_policy = data.aws_iam_policy_document.canary_assume_role.json
 }
 
@@ -190,7 +190,7 @@ resource "aws_cloudwatch_metric_alarm" "canary_alarm" {
 }
 
 resource "aws_sns_topic" "canary_alarm" {
-  name = "dev-xcheck-api-canary-alarm"
+  name = var.canary_sns_topic_name
 }
 
 resource "aws_sns_topic_subscription" "canary_alarm" {

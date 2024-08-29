@@ -71,3 +71,18 @@ variable "security_group_ids" {
   type        = list(string)
   description = "IDs of the security groups for this canary"
 }
+
+variable "canary_iam_role_name" {
+  type        = string
+  description = "Name of the IAM role for the canary"
+}
+
+variable "canary_iam_policy_name" {
+  type        = string
+  description = "Name of the IAM policy for the canary"
+}
+
+variable "canary_sns_topic_name" {
+  type        = string
+  description = "Name of the SNS topic for the canary" 
+}
