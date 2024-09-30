@@ -46,7 +46,7 @@ resource "aws_synthetics_canary" "canary" {
   execution_role_arn   = aws_iam_role.canary_role.arn
   handler              = "pageLoadBlueprint.handler"
   zip_file             = "/tmp/${each.key}-${md5(local.file_content[each.key])}.zip"
-  runtime_version      = "syn-nodejs-puppeteer-7.0"
+  runtime_version      = var.runtime_version
   start_canary         = true
   tags                 = module.labels.tags
 

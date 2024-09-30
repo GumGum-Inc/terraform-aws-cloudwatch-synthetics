@@ -84,5 +84,11 @@ variable "canary_iam_policy_name" {
 
 variable "canary_sns_topic_name" {
   type        = string
-  description = "Name of the SNS topic for the canary" 
+  description = "Name of the SNS topic for the canary"
+}
+
+variable "runtime_version" {
+  type        = string
+  default     = "syn-nodejs-puppeteer-7.0"
+  description = "The runtime version to use for the canary"
 }
