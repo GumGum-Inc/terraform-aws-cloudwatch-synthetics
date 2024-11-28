@@ -170,10 +170,10 @@ resource "aws_cloudwatch_metric_alarm" "canary_alarm" {
 
   alarm_name          = "${each.key}-canary-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
-  evaluation_periods  = "1"
+  evaluation_periods  = var.alarm_evaluation_periods
   metric_name         = "Failed requests"
   namespace           = "CloudWatchSynthetics"
-  period              = "60" # 1 minute
+  period              = var.alarm_period
   statistic           = "Sum"
   threshold           = "1"
   treat_missing_data  = "notBreaching"

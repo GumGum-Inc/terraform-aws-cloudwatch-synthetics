@@ -60,6 +60,17 @@ variable "alarm_email" {
   description = "Email address to send alarms to"
 }
 
+variable "alarm_evaluation_periods" {
+  type        = number
+  default     = 1
+  description = "The number of periods over which data is compared to the specified threshold"
+}
+
+variable "alarm_period" {
+  type        = number
+  default     = 60
+  description = "The period in seconds over which the specified statistic is applied"
+}
 variable "subnet_ids" {
   default     = null
   type        = list(string)
