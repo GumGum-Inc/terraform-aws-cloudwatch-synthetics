@@ -1,0 +1,25 @@
+name: Release new version
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_semver_type:
+        description: The type of semantic version release.
+        type: choice
+        required: true
+        default: 'minor'
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  release:
+    uses: gumgum-inc/reusable-workflow-semantic-versioning/.github/workflows/github-actions-auto-semver.yaml@v0
+    with:
+      create_release: true
+      base_ref: master
+      release_semver_type: ${{ github.event.inputs.release_semver_type }}
