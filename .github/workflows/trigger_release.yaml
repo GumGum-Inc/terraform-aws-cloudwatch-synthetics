@@ -18,7 +18,7 @@ on:
 
 jobs:
   release:
-    uses: gumgum-inc/reusable-workflow-semantic-versioning/.github/workflows/github-actions-auto-semver.yaml@v0
+    uses: gumgum-inc/reusable-workflow-semantic-versioning/.github/workflows/github-actions-auto-semver.yaml@v1
     with:
       create_release: true
       base_ref: master
