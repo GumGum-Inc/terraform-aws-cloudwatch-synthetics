@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-aws-cloudwatch-synthetics
+  description: "CloudWatch Synthetic Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services"
+  annotations:
+    github.com/project-slug: GumGum-Inc/terraform-aws-cloudwatch-synthetics
+    backstage.io/source-location: "url:https://github.com/GumGum-Inc/terraform-aws-cloudwatch-synthetics"
+  tags:
+    - hcl
+spec:
+  type: infrastructure
+  lifecycle: experimental
+  owner: "group:devops"
