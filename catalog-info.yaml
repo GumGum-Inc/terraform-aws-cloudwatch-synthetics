@@ -12,3 +12,4 @@ spec:
   type: infrastructure
   lifecycle: experimental
   owner: "group:devops"
+  system: "system:default/infrastructure-delivery-platform"
